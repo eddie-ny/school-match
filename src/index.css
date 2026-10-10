@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-orange: #FF9E00;
+  --color-brand-green: #8DBE22;
+  --color-brand-orange-soft: #FFF4E0; /* the logo orange at about 12% on white, for big areas */
+  --color-ink: #333333;
+  --font-heading: "Poppins", sans-serif;
+  --font-body: "Inter", sans-serif;
+}
+
+body {
+  background: #ffffff;
+  color: var(--color-ink);
+  font-family: var(--font-body);
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
+}
+
+@layer components {
+/* Large tap targets for phones */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0 20px;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.15s;
+}
+.btn:hover { opacity: 0.9; }
+.btn:disabled { opacity: 0.5; cursor: not-allowed; }
+.btn-orange { background: var(--color-brand-orange); color: #1f1f1f; }
+.btn-green { background: var(--color-brand-green); color: #1f1f1f; }
+.btn-outline { border: 2px solid var(--color-brand-green); color: var(--color-ink); background: #fff; }
+
+.card {
+  background: #fff;
+  border: 1px solid #e5e5e5;
+  border-radius: 16px;
+  padding: 20px;
+}
+
+.input {
+  width: 100%;
+  min-height: 48px;
+  border: 1px solid #cfcfcf;
+  border-radius: 12px;
+  padding: 0 14px;
+  background: #fff;
+  font-size: 16px;
+}
+.input:focus { outline: 2px solid var(--color-brand-orange); border-color: transparent; }
+
+.label { display: block; font-size: 14px; font-weight: 600; margin-bottom: 6px; }
+}
